@@ -15,7 +15,7 @@
         <!-- Here you will be able to choose the league of your Choice-->
          <div class="controls">
             <label> League 
-                <select id ="select-league">
+                <select id ="league-select">
                     <option value="eng.1"> Premier League </option>
                     <option value="esp.1"> La Liga </option>
                     <option value="ger.1"> Bundesliga </option>
@@ -29,13 +29,30 @@
 
           <!-- The results will appear here but will stay hidden until we get data-->
            <section id="results" hidden>
-            <h2 id="title-league"></h2>
+            <h2 id="league-title"></h2>
             <!-- Sorting and filtering some controls-->
              <div class="controls">
                 <label> Search Team
                     <input id="search-team" type="text" placeholder="e.g: city">
                 </label>
+
+                <label> Sort BY
+                    <select id="sort-select">
+                        <option value="rank"> League position </option>
+                        <option value="points"> Points </option>
+                        <option value="wins"> Wins </option>
+                        <option value="goals"> Goals Scored </option>
+                        <option value="gd"> Goal Difference </option>
+                        <option value="name"> Team Names(A-Z) </option>
+                    </select>
+                </label>
+
+                <label> Min Points
+                    <input id="min-points" type="number" min="0" placeholder="e.g: 20">
+                </label>
              </div>
+
+             
            </section>
     </main>
 </body>
