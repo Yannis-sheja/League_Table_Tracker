@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League Table Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header> League Table Tracker
+    <p> Here are the standings of Europe's Top Football Leagues. Sort and Filter the Teams according to different categories.</p>
+    </header>
+
+    <main>
+        <!-- Here you will be able to choose the league of your Choice-->
+         <div class="controls">
+            <label> League 
+                <select id ="select-league">
+                    <option value="eng.1"> Premier League </option>
+                    <option value="esp.1"> La Liga </option>
+                    <option value="ger.1"> Bundesliga </option>
+                    <option value="ita.1"> Serie A </option>
+                    <option value="fra.1"> Ligue 1 </option>
+                </select>
+            </label>
+         </div>
+         <!-- Here, they will messages like loading and errors-->
+          <p id="message" role="status"> </p>
+
+          <!-- The results will appear here but will stay hidden until we get data-->
+           <section id="results" hidden>
+            <h2 id="title-league"></h2>
+            <!-- Sorting and filtering some controls-->
+             <div class="controls">
+                <label> Search Team
+                    <input id="search-team" type="text" placeholder="e.g: city">
+                </label>
+             </div>
+           </section>
+    </main>
+</body>
+</html>
