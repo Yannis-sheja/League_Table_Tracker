@@ -27,9 +27,9 @@ const SORTERS = {
     points: (a,b) => b.points - a.points,
     wins: (a,b) => b.wins - a.wins,
     goals: (a,b) => b.goalsFor - a.goalsFor,
-    gd: (a,b) => b.goalDiff - a.goalDiff,
-    name: (a,b) => a.name.localeCompare(b.name),
-};
+    gd: (a,b) => b.goalDiff -a.goalDiff,
+    name: (a,b) =>a.name.localeCompare(b.name),
+}
 
 // Here a message is shown to the user where isError = true makes it red //
 function showMessage(text, isError = false) {
@@ -46,7 +46,7 @@ function readStats(stats, name) {
 
 //This turns the answer of ESPN into a simple list like one object per team
 function parseStandings(data) {
-    //Some answers contain the table inside children and remaining at the top
+    //Some answers contain the table inside children and the remaining at the top
     const groups= data?.children?.length ? data.children : [data];
 
     return groups.flatMap((group) =>
@@ -105,5 +105,38 @@ function makeRow(values, className) {
     }));
     return row;
 }
+
+//Here, it applies the search, filter and sort and then the table is drawn //
+function renderTable() {
+    const search = teamSearch.value.trim().toLowerCase();
+    const minPoints = minPointsInput.value; 
+
+    const teams = allTeams
+    .filter((team) => team.name.toLowerCase().includes(search))
+    .filter((team) => minPoints === "" || team.points >= Number(minPoints))
+    .sort(SORTERS[sortSelect.value]);
+
+    if (teams.length === 0) {
+        const row = makeRow(["No teams match your filters."]);
+        row.firstChild.colSpan = 10;
+        tableBody.replaceChildren(row);
+        return;
+    }
+
+    tableBody.replaceChildren(...teams.map((team) => makeRow(
+        [team.rank, team.name, team.played, team.wins, team.draws, team.losses,
+            team.goalsFor, team.goalsAgainst, (team.goalDiff > 0 ? "+" : "") + team.goalDiff, team.points],
+            team.rank <= 4 ? "top-four" : ""
+    )));
+}
+
+//Loading a new table if the league starts to changes
+leagueSelect.addEventListener("change", () => loadLeague(leagueSelect.value));
+
+//If the user changes the controls then the table is redrawn // 
+[teamSearch, sortSelect, minPointsInput].forEach((control) => control.addEventListener("input", renderTable));
+
+// If the page opens, the first league is loaded
+loadleague(leagueSelect.value);
 
 
