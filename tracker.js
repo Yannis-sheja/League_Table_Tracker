@@ -2,7 +2,7 @@ const STANDINGS_URL = "https://site.api.espn.com/apis/v2/sports/soccer/{code}/st
 
 // Here we will find the element of the page by using its id //
 const $ = (id) => document.getElementById(id);
-const leagueSelect = $("select-league");
+const leagueSelect = $("league-select");
 const message = $("message");
 const results = $("results");
 const leagueTitle = $("league-title");
