@@ -1,0 +1,14 @@
+/*Page style*/
+* {box-sizing : border-box; }
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: hsl(120, 26%, 95%);
+    color: hsl(120, 22%, 14%);
+}
+header {
+    background: hsl(142, 72%, 29%);
+    color: white;
+    text-align: center;
+    padding: 
+}
