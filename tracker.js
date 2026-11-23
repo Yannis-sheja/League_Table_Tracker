@@ -11,3 +11,23 @@ const sortSelect = $("sort-select");
 const minPointsInput = $("min-points");
 const tableBody = $("table-body");
 
+// All the teams will be sorted here //
+let allTeams = [];
+
+// Name for each number by using ESPN
+const FIELDS = {
+    played: "gamesPlayed", wins: "wins", draws: "ties", losses: "losses",
+    goalsFor: "pointsFor", goalsAgainst: "pointsAgainst",
+    goalDiff: "pointDifferential", points: "points"
+};
+
+// SORT compares two teams //
+const SORTERS = {
+    rank: (a,b) => a.rank - b.rank,
+    points: (a,b) => b.points - a.points,
+    wins: (a,b) => b.wins - a.wins,
+    goals: (a,b) => b.goalsFor - a.goalsFor,
+    gd: (a,b) => b.goalDiff - a.goalDiff,
+    name: (a,b) => a.name.localeCompare(b.name),
+};
+
