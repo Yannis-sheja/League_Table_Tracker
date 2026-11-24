@@ -101,3 +101,76 @@ td:last-child {
 tr.top-four td:first-child {
     border-left: 4px solid hsl(142, 72%, 29%);
 }
+
+/* ---------- Responsive ---------- */
+
+/* Tablets and below */
+@media (max-width: 768px) {
+    main {
+        margin: 16px auto;
+    }
+
+    .controls {
+        gap: 12px;
+    }
+
+    .controls label {
+        flex: 1 1 160px;
+    }
+
+    .controls input,
+    .controls select,
+    .controls input[type="number"] {
+        width: 100%;
+        font-size: 16px; /* stops iOS zooming into fields */
+    }
+
+    th,
+    td {
+        padding: 8px 6px;
+        font-size: 14px;
+    }
+
+    /* Hide goals for / against; goal difference still shows */
+    th:nth-child(7), td:nth-child(7),
+    th:nth-child(8), td:nth-child(8) {
+        display: none;
+    }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+    header {
+        padding: 16px 12px;
+    }
+
+    main {
+        padding: 0 8px;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .controls label {
+        flex: none;
+    }
+
+    th,
+    td {
+        padding: 8px 4px;
+        font-size: 13px;
+    }
+
+    /* Hide draws and losses too: Pos, Team, P, W, GD, Pts remain */
+    th:nth-child(5), td:nth-child(5),
+    th:nth-child(6), td:nth-child(6) {
+        display: none;
+    }
+
+    td:nth-child(2) {
+        max-width: 130px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

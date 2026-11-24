@@ -1,84 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>League Table Tracker</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>League Table Tracker</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header> League Table Tracker
-    <p> Here are the standings of Europe's Top Football Leagues. Sort and Filter the Teams according to different categories.</p>
-    </header>
+  <header>
+    <h1>League Table Tracker</h1>
+    <p>Follow the standings of Europe's top football leagues. Sort and filter the teams.</p>
+  </header>
 
-    <main>
-        <!-- Here you will be able to choose the league of your Choice-->
-         <div class="controls">
-            <label> League 
-                <select id ="league-select">
-                    <option value="eng.1"> Premier League </option>
-                    <option value="esp.1"> La Liga </option>
-                    <option value="ger.1"> Bundesliga </option>
-                    <option value="ita.1"> Serie A </option>
-                    <option value="fra.1"> Ligue 1 </option>
-                </select>
-            </label>
-         </div>
-         <!-- Here they will be messages like loading and errors -->
-          <p id="message" role="status"> </p>
+  <main>
+    <!-- Choose a league -->
+    <div class="controls">
+      <label>League
+        <select id="league-select">
+          <option value="eng.1">English Premier League</option>
+          <option value="esp.1">Spanish La Liga</option>
+          <option value="ger.1">German Bundesliga</option>
+          <option value="ita.1">Italian Serie A</option>
+          <option value="fra.1">French Ligue 1</option>
+        </select>
+      </label>
+    </div>
 
-          <!-- The results will appear here but will stay hidden until we get data-->
-           <section id="results" hidden>
-            <h2 id="league-title"></h2>
-            <!-- Sorting and filtering some controls-->
-             <div class="controls">
-                <label> Search Team
-                    <input id="search-team" type="text" placeholder="e.g: city">
-                </label>
+    <!-- Messages: loading and errors appear here -->
+    <p id="message" role="status"></p>
 
-                <label> Sort BY
-                    <select id="sort-select">
-                        <option value="rank"> League position </option>
-                        <option value="points"> Points </option>
-                        <option value="wins"> Wins </option>
-                        <option value="goals"> Goals Scored </option>
-                        <option value="gd"> Goal Difference </option>
-                        <option value="name"> Team Names(A-Z) </option>
-                    </select>
-                </label>
+    <!-- Results (hidden until we have data) -->
+    <section id="results" hidden>
+      <h2 id="league-title"></h2>
 
-                <label> Min Points
-                    <input id="min-points" type="number" min="0" placeholder="e.g: 20">
-                </label>
-             </div>
+      <!-- Sort and filter controls -->
+      <div class="controls">
+        <label>Search team
+          <input id="team-search" type="text" placeholder="e.g. city">
+        </label>
 
-             <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th> Position</th>
-                            <th> Team </th>
-                            <th> P </th>
-                            <th> W </th>
-                            <th> D </th>
-                            <th> L </th>
-                            <th> GF </th>
-                            <th> GA </th>
-                            <th> GD </th>
-                            <th> Pts </th>
-                        </tr>
-                    </thead>
-                    <tbody id="table-body"></tbody>
-                </table>
-             </div>
-            </section>
-        </main>
+        <label>Sort by
+          <select id="sort-select">
+            <option value="rank">League position</option>
+            <option value="points">Points</option>
+            <option value="wins">Wins</option>
+            <option value="goals">Goals scored</option>
+            <option value="gd">Goal difference</option>
+            <option value="name">Team name (A-Z)</option>
+          </select>
+        </label>
 
-        <footer>
-            Data: <a href="https://www.espn.com/soccer/" target="_blank" rel="noopener">ESPN</a>
-            (Public, Unofficial API)
-        </footer>
+        <label>Min points
+          <input id="min-points" type="number" min="0" placeholder="e.g. 20">
+        </label>
+      </div>
 
-        <script src="tracker.js"> </script>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Pos</th>
+              <th>Team</th>
+              <th>P</th>
+              <th>W</th>
+              <th>D</th>
+              <th>L</th>
+              <th>GF</th>
+              <th>GA</th>
+              <th>GD</th>
+              <th>Pts</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Data: <a href="https://www.espn.com/soccer/" target="_blank" rel="noopener">ESPN</a>
+    (public, unofficial API)
+  </footer>
+
+  <script src="tracker.js"></script>
 </body>
 </html>
