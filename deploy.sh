@@ -8,7 +8,7 @@ for IP in "$WEB_01_IP" "$WEB_02_IP"; do
     echo "---Deploying to the $IP---"
 
     scp -i "$KEY" -o StrictHostKeyChecking=no \
-    web/index.html web/style.css web/app.js "ubuntu@$IP:~/"
+    index.html style.css web/app.js "ubuntu@$IP:~/"
 
     ssh -i "$KEY" -o StrictHostKeyChecking=no "ubuntu@$IP" \
     "sudo cp ~/index.html ~/style.css ~/tracker.js /var/www/html && curl -sI localhost | head -n 1"
