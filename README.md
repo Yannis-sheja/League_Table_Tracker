@@ -49,11 +49,11 @@ computer and is never committed (`.gitignore` also blocks common secret files).
 
 ```
 League_Table_Tracker/
-web/
-├── index.html         the page structure
-├── style.css          colours, layout and responsive rules
-├── tracker.js         the logic (calls the API, sorts, filters)
-├── deploy.sh          copies the app to both web servers
+├── web/
+│   ├── index.html         the page structure
+│   ├── style.css          colours, layout and responsive rules
+│   └── tracker.js         the logic (calls the API, sorts, filters)
+├── deploy.sh              copies the app to both web servers
 ├── .gitignore
 └── README.md
 ```
