@@ -1,6 +1,6 @@
 #/usr/bin/env bash
 
-KEY = "$HOME/ssh/school"
+KEY = "/home/yann/.ssh/id_ed25519"
 WEB_01_IP = "18.170.217.131"
 WEB_02_IP = "18.132.98.220"
 
@@ -8,7 +8,7 @@ for IP in "$WEB_01_IP" "$WEB_02_IP"; do
     echo "---Deploying to the $IP---"
 
     scp -i "$KEY" -o StrictHostKeyChecking=no \
-    index.html style.css tracker.js "ubuntu@$IP:~/"
+    web/index.html web/style.css web/app.js "ubuntu@$IP:~/"
 
     ssh -i "$KEY" -o StrictHostKeyChecking=no "ubuntu@$IP" \
     "sudo cp ~/index.html ~/style.css ~/tracker.js /var/www/html && curl -sI localhost | head -n 1"
