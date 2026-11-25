@@ -67,6 +67,8 @@ also just open `index.html` in a browser):
 python3 -m http.server 8000
 ```
 
+#if port 8000 is busy, use another one, e.g. 8081 
+
 To check the responsive layout, open your browser's developer tools and switch on the device
 toolbar, or simply make the window narrower.
 
