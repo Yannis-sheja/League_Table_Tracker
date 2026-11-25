@@ -1,6 +1,6 @@
 # League Table Tracker
 
-A football (soccer) standings web app for fans who want to follow their league. Pick a league,
+A football standings web app for fans who want to follow their league. Pick a league,
 see the full table, then **sort** and **filter** the teams: find the top scorers, the teams
 above 20 points, or search for one club.
 
@@ -8,9 +8,9 @@ The app is deployed on two web servers behind a load balancer.
 
 ## Links
 
-- Demo video (under 2 minutes): VIDEO_LINK
+- Demo video: VIDEO_LINK
 - Deployed website (through the load balancer): http://18.169.184.99
-- Source code: https://github.com/YOUR-USERNAME/League_Table_Tracker
+- Source code: https://github.com/Yanni-sheja/League_Table_Tracker
 
 ## API used
 
