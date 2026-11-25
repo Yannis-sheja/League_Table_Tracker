@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-KEY="/home/yann/.ssh/id_ed25519"
+KEY="/home/yann/.ssh/school"
 WEB_01_IP="18.170.217.131"
 WEB_02_IP="18.132.98.220"
 
