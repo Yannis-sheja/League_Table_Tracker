@@ -8,7 +8,7 @@ The app is deployed on two web servers behind a load balancer.
 
 ## Links
 
-- Demo video: VIDEO_LINK
+- Demo video: https://youtu.be/Dra5LZMtSwg
 - Deployed website (through the load balancer): http://18.169.184.99
 - Source code: https://github.com/Yanni-sheja/League_Table_Tracker
 
