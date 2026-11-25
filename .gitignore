@@ -6,3 +6,4 @@ school
 .vscode/
 .idea/
 .DS_Store
+id_ed25519*
